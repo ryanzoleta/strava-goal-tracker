@@ -9,24 +9,30 @@
   const year = currentDate.year();
 
   let goal = 2500;
-  let current = 1540;
+  let current = 0;
   $: distanceLeft = goal - current;
   $: weeklyGoal = Math.floor(distanceLeft / diffInWeeks);
   $: dailyGoal = Math.floor(distanceLeft / (diffInWeeks * 4));
 </script>
 
-<div class="flex w-full flex-col place-items-center gap-10">
+<div class="flex flex-col place-items-center gap-10">
   <h1 class="text-2xl font-bold tracking-tight">Strava Goal Tracker</h1>
 
   <div class="flex place-content-between gap-10">
     <div class="flex flex-col place-items-center">
       <p class="text-gray-500">Your goal for {year}</p>
-      <h3 class="text-5xl font-bold">{goal} km</h3>
+      <input
+        type="text"
+        bind:value={goal}
+        class="rounded-md border border-gray-700 bg-black text-center text-5xl font-bold" />
     </div>
 
     <div class="flex flex-col place-items-center">
       <p class="text-gray-500">So far, you've biked</p>
-      <h3 class="text-5xl font-bold">{current} km</h3>
+      <input
+        type="text"
+        bind:value={current}
+        class="rounded-md border border-gray-700 bg-black text-center text-5xl font-bold" />
     </div>
   </div>
 
