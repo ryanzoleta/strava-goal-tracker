@@ -2,7 +2,7 @@
   import '../app.css';
 </script>
 
-<div class="flex min-h-screen place-content-center p-10">
+<div class="flex min-h-screen place-content-center bg-black p-10 text-white">
   <div>
     <slot />
   </div>
